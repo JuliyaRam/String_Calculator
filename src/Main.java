@@ -9,7 +9,6 @@ public class Main{
         char action; // определяем тип данных для математической операции
         String[] operand;  // определяем массив данных
 
-
         //Определяем знак действия:
 
         // если выражение содержит знак '+', разделяем строку по символу " + "
@@ -40,10 +39,6 @@ public class Main{
             throw new RuntimeException("Первый операнд должен быть записан в кавычках");
         }
 
-        if (operand[0].length() > 12 || operand[0].length() > 12) {
-            throw new IllegalArgumentException("Операнды должны быть длиной не более 10 символов");
-        }
-
         // Проверяем, является ли текущая операция умножением (*) или делением (/).
         // Если операция не является умножением или делением, то блок кода внутри условия не будет выполнен.
         if (action == '*' || action == '/') {
@@ -61,7 +56,7 @@ public class Main{
             operand[i] = operand[i].replace("\"", "");
         }
 
-               // Добавляем условие - проверка длины операндов
+        // Добавляем условие - проверка длины операндов
         if (operand[0].length() > 10 || operand[1].length() > 10) {
             throw new Exception("Строки не должны превышать 10 символов");
         }
@@ -111,6 +106,7 @@ public class Main{
                 for (int i = 0; i < multiplier; i++) {
                     result += operand[0];
                 }
+
                 // результат выводим на экран с добавлением кавычек
                 System.out.println(addQuotation(result));
             }
@@ -134,10 +130,11 @@ public class Main{
                 // которая равна делению его длины на значение второго операн-да.
                 String result = operand[0].substring(0, line);
                 // результат выводим на экран с добавлением кавычек
-               // String res = addQuotation(result);
+                // String res = addQuotation(result);
                 //System.out.println(res);
                 //String res = addQuotation(result);
                 System.out.println(addQuotation(result));
+
 
                 //addQuotation(result);
             } else {
@@ -157,6 +154,7 @@ public class Main{
 
     //Метод - добавление кавычек к результату математической операции
     private static String addQuotation(String text){
+
         if (text.length() > 40) {
             text = text.substring(0, 40) + "...";
         }
